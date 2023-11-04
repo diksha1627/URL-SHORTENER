@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    display:flex;
+    justify-items:center;
+    align-items: center;
+    flex-direction: column;
+    gap:3rem;
+    font-family: sans-serif;
+
+}
+
+.heading{
+    margin-top: 2rem;
+}
+
+.formBlock form{
+    display:flex;
+    justify-items:center;
+    align-items: center;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+#url{
+  padding:0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px #0000ff; 
+  width:20rem;
+  outline:none;
+}
+
+#btn{
+
+    margin-top:1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-size: 100%;
+    border: none;
+    color: aliceblue;
+    background-color: rgb(24, 139, 181);
+}
+#btn:hover{
+    cursor: pointer;
+}
+
+.tableBlock td,th{
+    border:1px solid black;
+    padding:1rem;
+}
