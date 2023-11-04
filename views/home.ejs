@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        *{
+    margin:0;
+    padding:0;
+}
+body{
+    display:flex;
+    justify-items:center;
+    align-items: center;
+    flex-direction: column;
+    gap:3rem;
+    font-family: sans-serif;
+
+}
+
+.heading{
+    margin-top: 2rem;
+}
+
+.formBlock form{
+    display:flex;
+    justify-items:center;
+    align-items: center;
+    flex-direction: column;
+    gap:0.5rem;
+}
+
+#url{
+  padding:0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px #0000ff; 
+  width:20rem;
+  outline:none;
+}
+
+#btn{
+
+    margin-top:1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    font-size: 100%;
+    border: none;
+    color: aliceblue;
+    background-color: rgb(24, 139, 181);
+}
+#btn:hover{
+    cursor: pointer;
+}
+
+.tableBlock td,th{
+    border:1px solid black;
+    padding:1rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>URL SHORTNER</h1>
+    </div>
+    <div class="formBlock">
+        <form  class="form" method="post" action="/">
+           <label for="url">Enter URL To Shorten</label>
+           <input type="text" name="url" id="url" placeholder="Enter your url">
+           <input type="submit" id="btn" value="Submit">
+        </form>
+    </div>
+  <div class="tableBlock">
+     <table>
+        <tr>
+            <th>Url Submitted</th>
+            <th>Shortened Url</th>
+            <th>No. of Views</th>
+        </tr>
+        <% urls.forEach((url)=> { %>
+        <tr>
+            <td><a href="<%= url.url %>" target="_blank"><%= url.url %></a></td>
+            <td><a href="<%= url.shortId %>" target="_blank"><%= url.shortId %></a></td>
+            <td><%= url.clicks %></td>
+        </tr>
+        <% }); %>
+     </table>
+  </div>
+</body>
+</html>
